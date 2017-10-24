@@ -15,27 +15,45 @@ If you encounter any bugs, or have feature requests please report them (or bette
 
 ### Linux
 ```bash
-apt install libxext-dev m4 automake
+sudo apt install libxext-dev m4 automake
 git clone https://github.com/neilo40/restful-doom.git
 cd restful-doom
 ./configure-and-build.sh
 ```
 
 ### MacOS
+1. Install homebrew (https://brew.sh/)
 ```bash
-TBC
+brew install autoconf
+brew install automake
+git clone https://github.com/neilo40/restful-doom.git
+cd restful-doom
+aclocal -l /usr/local/share/aclocal
+autoheaders
+./configure-and-build.sh
 ```
 
 ### Windows 10
 We got the best results using the WSL (Windows Subsystem for Linux)
+1. Install ubuntu through WSL (available in the store)
+2. Start a bash shell
 ```bash
-TBC
+sudo apt install git
+git clone https://github.com/neilo40/restful-doom.git
+sudo apt install libsdl2-2.0-0 libsdl2-dbg libsdl2-dev libsdl2-doc libsdl2-gfx-1.0-0 libsdl2-gfx-dbg libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-2.0-0 libsdl2-image-dbg libsdl2-image-dev libsdl2-mixer-2.0-0 libsdl2-mixer-dbg libsdl2-mixer-dev libsdl2-net-2.0-0 libsdl2-net-dbg libsdl2-net-dev libdsl2-ttf-2.0-0 libsdl2-ttf-dbg libsdl2-ttf-dev
+sudo apt install autotools-dev
+sudo apt install autoconf
+cd restful-doom
+./configure-and-build.sh
 ```
+3. Download install and run [VcXsrv](https://sourceforge.net/projects/vcxsrv/) (or X server of your choice)
 
 ## How to run the engine
 During development, you may run the game standalone (i.e. non-server) mode, or you may start a server to test your bot against itself (or others).  During development you will have access to the full API, including restricted endpoints.  During the judging you will not be able to use these.
 
 Config files will be placed into ~/.restful-doom/ which you can use to configure your client.  e.g. disable mouse, set screen size, player name etc
+
+*On windows you will need to export DISPLAY=:0*
 
 ### Single player
 In this mode, all API endpoints are available to use
