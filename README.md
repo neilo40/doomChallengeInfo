@@ -87,7 +87,28 @@ restful-doom -apiport 6004 -iwad ~/Downloads/doom1.wad -connect localhost \
 We will use the mode during judging.  No player will be able to access restricted API endpoints
 
 ```bash
-TBC
+restful-doom -privateserver -dedicated&
+
+# First client sets the game params
+restful-doom -apiport 6001 -iwad ~/Downloads/doom1.wad -connect localhost \
+    -extraconfig ~/.restful-doom/restful-doom_p1.cfg -deathmatch -nomonsters -no
+audio&
+sleep 1 # ensure 6001 is the first player
+
+# start other clients
+restful-doom -apiport 6002 -iwad ~/Downloads/doom1.wad -connect localhost \
+    -extraconfig ~/.restful-doom/restful-doom_p2.cfg&
+restful-doom -apiport 6003 -iwad ~/Downloads/doom1.wad -connect localhost \
+    -extraconfig ~/.restful-doom/restful-doom_p3.cfg&
+restful-doom -apiport 6004 -iwad ~/Downloads/doom.wad -connect localhost \
+    -extraconfig ~/.restful-doom/restful-doom_p4.cfg&
+```
+
+### To use a custom wad
+To use a custom wad, e.g. our Arena.wad, you will need to provide the non-shareware wad as the iwad arg, then the Arena wad as the -file arg:
+
+```bash
+restful-doom -iwad doom.wad -file Arena.wad ...
 ```
 
 ## How to interact with the game world
