@@ -60,8 +60,9 @@ During development, you may run the game standalone (i.e. non-server) mode, or y
 
 Config files will be placed into ~/.restful-doom/ which you can use to configure your client.  e.g. disable mouse, set screen size, player name etc
 
-*On Windows you will need to export DISPLAY=:0*
-*On MacOS you will need to pass the -nosound argument or SDL will segfault*
+### Notes
+- *On Windows you will need to export DISPLAY=:0*
+- *On MacOS you will need to pass the -nosound argument or SDL will segfault*
 
 ### Single player
 In this mode, all API endpoints are available to use
