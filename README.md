@@ -45,15 +45,14 @@ We got the best results using the WSL (Windows Subsystem for Linux)
 1. Install ubuntu through WSL (available in the store)
 2. Start a bash shell
 ```bash
+sudo apt install libsdl2-2.0-0 libsdl2-dev libsdl2-mixer-2.0-0 libsdl2-mixer-dev libsdl2-net-2.0-0 libsdl2-net-dev
+sudo apt install autotools-dev autoconf automake gcc make pkg-config
 sudo apt install git
 git clone https://github.com/neilo40/restful-doom.git
-sudo apt install libsdl2-2.0-0 libsdl2-dbg libsdl2-dev libsdl2-doc libsdl2-gfx-1.0-0 libsdl2-gfx-dbg libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-2.0-0 libsdl2-image-dbg libsdl2-image-dev libsdl2-mixer-2.0-0 libsdl2-mixer-dbg libsdl2-mixer-dev libsdl2-net-2.0-0 libsdl2-net-dbg libsdl2-net-dev libdsl2-ttf-2.0-0 libsdl2-ttf-dbg libsdl2-ttf-dev
-sudo apt install autotools-dev
-sudo apt install autoconf
 cd restful-doom
 ./configure-and-build.sh
 ```
-3. Download install and run [VcXsrv](https://sourceforge.net/projects/vcxsrv/) (or X server of your choice)
+3. Download, install and run [VcXsrv](https://sourceforge.net/projects/vcxsrv/) (or X server of your choice)
 
 ## How to run the engine
 During development, you may run the game standalone (i.e. non-server) mode, or you may start a server to test your bot against itself (or others).  During development you will have access to the full API, including restricted endpoints.  During the judging you will not be able to use these.
@@ -85,7 +84,7 @@ restful-doom -apiport 6004 -iwad ~/Downloads/doom1.wad -connect localhost \
 ```
 
 ### Dedicated server
-We will use the mode during judging.  No player will be able to access restricted API endpoints
+We will use this mode during judging.  No player will be able to access restricted API endpoints
 
 ```bash
 restful-doom -privateserver -dedicated&
