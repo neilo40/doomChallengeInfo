@@ -61,6 +61,7 @@ Config files will be placed into ~/.restful-doom/ which you can use to configure
 
 ### Notes
 - *On Windows you will need to export DISPLAY=:0*
+- *On Windows you may need to add the -window option (fullscreen may not work with your XServer)*
 - *On MacOS you will need to pass the -nosound argument or SDL will segfault*
 
 ### Single player
