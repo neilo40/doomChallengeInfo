@@ -26,11 +26,18 @@ cd restful-doom
 ```bash
 brew install autoconf
 brew install automake
+brew install pkg-config
+brew install sdl2
+brew install sdl2_mixer 
+brew install sdl2_net
 git clone https://github.com/neilo40/restful-doom.git
 cd restful-doom
-aclocal -l /usr/local/share/aclocal
-autoheaders
-./configure-and-build.sh
+aclocal -I /usr/local/share/aclocal
+autoheader
+automake -a -c
+autoconf -I/usr/local/share/aclocal
+./configure --with-sdl-prefix=/usr/local
+make
 ```
 
 ### Windows 10
@@ -53,7 +60,8 @@ During development, you may run the game standalone (i.e. non-server) mode, or y
 
 Config files will be placed into ~/.restful-doom/ which you can use to configure your client.  e.g. disable mouse, set screen size, player name etc
 
-*On windows you will need to export DISPLAY=:0*
+*On Windows you will need to export DISPLAY=:0*
+*On MacOS you will need to pass the -nosound argument or SDL will segfault*
 
 ### Single player
 In this mode, all API endpoints are available to use
