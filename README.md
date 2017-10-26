@@ -28,16 +28,13 @@ brew install autoconf
 brew install automake
 brew install pkg-config
 brew install sdl2
-brew install sdl2_mixer 
-brew install sdl2_net
 git clone https://github.com/neilo40/restful-doom.git
 cd restful-doom
 aclocal -I /usr/local/share/aclocal
 autoheader
 automake -a -c
 autoconf -I/usr/local/share/aclocal
-./configure --with-sdl-prefix=/usr/local
-make
+./configure-and-build.sh
 ```
 
 ### Windows 10
