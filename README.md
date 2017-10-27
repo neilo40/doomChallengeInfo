@@ -126,4 +126,4 @@ We have some sample code which you can use to get started with parsing the  wad 
 ### Links
 For some documentation on the format of the WAD file, have a look at:
 - http://doom.wikia.com/wiki/WAD
-- exploded diagram TBC
+- exploded diagram: http://formats.kaitai.io/doom_wad/index.html
