@@ -102,10 +102,10 @@ restful-doom -apiport 6004 -iwad ~/Downloads/doom.wad -connect localhost \
 ```
 
 ### To use a custom wad
-To use a custom wad, e.g. our Arena.wad, you will need to provide the non-shareware wad as the iwad arg, then the Arena wad as the -file arg:
+To use a custom wad, e.g. our Arena.wad, you will need to provide the non-shareware wad (doom.wad, not doom1.wad) as the iwad arg, then the Arena wad as the -merge arg:
 
 ```bash
-restful-doom -iwad doom.wad -file Arena.wad ...
+restful-doom -iwad doom.wad -merge Arena.wad ...
 ```
 
 ## How to interact with the game world
