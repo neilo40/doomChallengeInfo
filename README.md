@@ -27,6 +27,7 @@ git clone https://github.com/neilo40/restful-doom.git
 cd restful-doom
 aclocal -I /usr/local/share/aclocal
 autoheader
+mkdir autotools (may not be required)
 automake -a -c
 autoconf -I/usr/local/share/aclocal
 ./configure-and-build.sh
